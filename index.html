@@ -3,9 +3,13 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <title>Demo</title>
-  <script src='js/jquery-1.4.4.min.js'></script>
-  <script src='js/jquery.hotkeys.js'></script>
+  <script src='js/vendor/jquery-1.4.4.min.js'></script>
+  <script src='js/vendor/jquery.hotkeys.js'></script>
+  <script src='js/vendor/class.js'></script>
   <script src='js/engine.js'></script>
+  <script src='js/math.js'></script>
+  <script src='js/entity.js'></script>
+  <script src='js/game.js'></script>
 
   <style>
 		#canvas-wrapper {
@@ -15,14 +19,33 @@
 
 	<script>
 		$(function() {
-			var game = new Gosu("#canvas");
-			game.show();
-			$('string/element/array/function/jQuery object/string, context')
-			$(document).bind('keydown', 'esc',function (evt){
-				console.log(this, new Date().getTime());
-				return false;
+			var game = new Game("#canvas");
+
+			$(document).bind('keydown', 'space',function (e){
+				e.preventDefault();
+				game.start();
 			});
 
+			$(document).bind('keydown', 'esc',function (e){
+				e.preventDefault();
+				game.stop();
+			});
+
+			$(document).bind('keydown', 'up',function (e){
+				e.preventDefault();
+				// game.playerAccelerate();
+				game.playerMoveForward();
+			});
+
+			$(document).bind('keydown', 'left',function (e){
+				e.preventDefault();
+				game.playerTurnLeft();
+			});
+
+			$(document).bind('keydown', 'right',function (e){
+				e.preventDefault();
+				game.playerTurnRight();
+			});
 		});
 	</script>
 </head>
