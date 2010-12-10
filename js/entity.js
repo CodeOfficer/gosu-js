@@ -26,11 +26,6 @@ var Entity = Class.extend({
     this.velY += Math.offsetY(this.angle, 0.5);
   },
 
-  moveForward: function() {
-    // this.velX += Math.offsetX(this.angle, 0.5);
-    // this.velY += Math.offsetY(this.angle, 0.5);
-  },
-
   update: function() {
     this.x += this.velX;
     this.y += this.velY;

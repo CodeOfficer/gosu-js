@@ -9,22 +9,6 @@ var Game = Engine.extend({
     this.sprites.push(this.player);
   },
 
-  // playerMoveForward: function() {
-  //   this.player.moveForward();
-  // },
-  // 
-  // playerAccelerate: function() {
-  //   this.player.accelerate();
-  // },
-  // 
-  // playerTurnLeft: function() {
-  //   this.player.turnLeft();
-  // },
-  // 
-  // playerTurnRight: function() {
-  //   this.player.turnRight();
-  // },
-
   buttonDown: function(keyCode) {
 		console.log(keyCode, "WAS DOWN!!!!");
   },

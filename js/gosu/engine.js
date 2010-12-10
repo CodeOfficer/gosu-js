@@ -30,7 +30,7 @@ var Engine = Class.extend({
 	},
 	
 	clearCanvas: function() {
-		// probably overridden by child
+		// overridden by child
     this.ctx.clearRect(0, 0, this.canvas.width(), this.canvas.height());
 	},
 

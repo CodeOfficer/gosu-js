@@ -1,5 +1,3 @@
-
-
 function ButtonID(string) {
 	return InputManager.reverseLookups[string];
 };
