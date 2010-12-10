@@ -7,7 +7,6 @@ var Engine = Class.extend({
   },
 
 	loop: function() {
-    // console.log("loop", new Date().getTime());
 		this.clearCanvas();
 		this.update();
 		this.draw();
@@ -16,23 +15,34 @@ var Engine = Class.extend({
 	start: function() {
 		console.log("start", new Date().getTime());
 		var self = this;
-		this.interval = setInterval(function() {self.loop()}, this.refreshRate);
+		$(document)
+			.bind("keydown.gosu", function(e){
+				self.buttonDown(e.keyCode);
+			});
+		this.interval = setInterval(function() {self.loop();}, this.refreshRate);
 	},
 	
 	stop: function() {
 		console.log("stop", new Date().getTime());
-	  clearInterval(this.interval)
-		this.interval = null;
+		$(document)
+			.unbind("keydown.gosu");
+	  clearInterval(this.interval);
 	},
 	
 	clearCanvas: function() {
-    // console.log("default clearCanvas", new Date().getTime());
-    // this.ctx.clearRect(0, 0, canvas.width, canvas.height);
+		// probably overridden by child
+    this.ctx.clearRect(0, 0, this.canvas.width(), this.canvas.height());
+	},
+
+	buttonDown: function(keyCode) {
+		// overridden by child
 	},
 	
 	update: function() {
+		// overridden by child
 	},
 	
 	draw: function() {
+		// overridden by child
 	}
 });

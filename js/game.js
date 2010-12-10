@@ -9,23 +9,38 @@ var Game = Engine.extend({
     this.sprites.push(this.player);
   },
 
-  playerMoveForward: function() {
-    this.player.moveForward();
-  },
+  // playerMoveForward: function() {
+  //   this.player.moveForward();
+  // },
+  // 
+  // playerAccelerate: function() {
+  //   this.player.accelerate();
+  // },
+  // 
+  // playerTurnLeft: function() {
+  //   this.player.turnLeft();
+  // },
+  // 
+  // playerTurnRight: function() {
+  //   this.player.turnRight();
+  // },
 
-  playerAccelerate: function() {
-    this.player.accelerate();
-  },
-
-  playerTurnLeft: function() {
-    this.player.turnLeft();
-  },
-
-  playerTurnRight: function() {
-    this.player.turnRight();
+  buttonDown: function(keyCode) {
+		console.log(keyCode, "WAS DOWN!!!!");
   },
 
   update: function() {
+		if (buttonIsDown('up')) {
+			this.player.accelerate();
+		};
+		if (buttonIsDown('left')) {
+			this.player.turnLeft();
+		};
+		if (buttonIsDown('right')) {
+			this.player.turnRight();
+		};
+	
+		
     $.each(this.sprites, function(index, sprite) {
       sprite.update();
     });

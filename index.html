@@ -6,9 +6,9 @@
   <script src='js/vendor/jquery-1.4.4.min.js'></script>
   <script src='js/vendor/jquery.hotkeys.js'></script>
   <script src='js/vendor/class.js'></script>
-  <script src='js/engine.js'></script>
-  <script src='js/input.js'></script>
-  <script src='js/math.js'></script>
+  <script src='js/gosu/input.js'></script>
+  <script src='js/gosu/math.js'></script>
+  <script src='js/gosu/engine.js'></script>
   <script src='js/entity.js'></script>
   <script src='js/game.js'></script>
 
@@ -22,16 +22,16 @@
 		$(function() {
 			var game = new Game("#canvas");
 
-			// $(document).bind('keydown', 'space',function (e){
-			// 	e.preventDefault();
-			// 	game.start();
-			// });
-			// 
-			// $(document).bind('keydown', 'esc',function (e){
-			// 	e.preventDefault();
-			// 	game.stop();
-			// });
-			// 
+			$(document).bind('keydown', 'space',function (e){
+				e.preventDefault();
+				game.start();
+			});
+			
+			$(document).bind('keydown', 'esc',function (e){
+				e.preventDefault();
+				game.stop();
+			});
+			
 			// $(document).bind('keydown', 'up',function (e){
 			// 	e.preventDefault();
 			// 	game.playerAccelerate();
@@ -48,14 +48,14 @@
 			// 	game.playerTurnRight();
 			// });
 			
-			$(document)
-				.keydown(function(e){
-					Input[e.keyCode] = true;
-				})
-				.keyup(function(e){
-					Input[e.keyCode] = false;
-					console.log(Input, e);
-				});
+			// $(document)
+			// 	.keydown(function(e){
+			// 		Input[e.keyCode] = true;
+			// 	})
+			// 	.keyup(function(e){
+			// 		Input[e.keyCode] = false;
+			// 		console.log(Input, e);
+			// 	});
 			
 		});
 	</script>
