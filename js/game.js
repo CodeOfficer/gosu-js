@@ -10,21 +10,20 @@ var Game = Engine.extend({
   },
 
   buttonDown: function(keyCode) {
-		console.log(keyCode, "WAS DOWN!!!!");
   },
 
   update: function() {
-		if (buttonIsDown('up')) {
-			this.player.accelerate();
-		};
-		if (buttonIsDown('left')) {
-			this.player.turnLeft();
-		};
-		if (buttonIsDown('right')) {
-			this.player.turnRight();
-		};
-	
-		
+    if (buttonIsDown('up')) {
+      this.player.accelerate();
+    };
+    if (buttonIsDown('left')) {
+      this.player.turnLeft();
+    };
+    if (buttonIsDown('right')) {
+      this.player.turnRight();
+    };
+
+
     $.each(this.sprites, function(index, sprite) {
       sprite.update();
     });

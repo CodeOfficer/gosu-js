@@ -36,6 +36,7 @@ var Entity = Class.extend({
   },
 
   draw: function() {
+    // console.log(parseInt(this.x, 10), parseInt(this.y, 10));
     this.ctx.beginPath();
     this.ctx.arc(parseInt(this.x, 10), parseInt(this.y, 10), 10, 0, Math.PI*2, true);
     this.ctx.closePath();
